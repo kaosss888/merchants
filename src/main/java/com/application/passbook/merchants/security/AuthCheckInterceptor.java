@@ -1,5 +1,7 @@
 package com.application.passbook.merchants.security;
 
+import com.application.passbook.merchants.constant.Constants;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,7 +14,16 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return false;
+        String token = request.getHeader(Constants.TOKEN_STRING);
+        if (StringUtils.isEmpty(token)) {
+            throw new Exception("Header中缺少 " + Constants.TOKEN_STRING + "!");
+        }
+        if (!token.equals(Constants.TOKEN)) {
+            throw new Exception("Header中 " + Constants.TOKEN_STRING + "错误！");
+        }
+
+        AccessContext.setToken(token);
+        return true;
     }
 
     @Override
@@ -22,6 +33,6 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-
+        AccessContext.clearAccessKey();
     }
 }
