@@ -21,4 +21,4 @@ server:
 logging:
   level:
     root: debug
-  file: passbook-merchants.log
+  file: passbook-merchants-test.log

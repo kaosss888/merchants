@@ -1,7 +1,7 @@
 package com.application.passbook.merchants.security;
 
 /**
- * ThreadLocal存储每一个线程携带的Token信息
+ * <h1>ThreadLocal存储每一个线程携带的Token信息</h1>
  */
 public class AccessContext {
 

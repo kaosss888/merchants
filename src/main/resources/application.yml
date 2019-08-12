@@ -20,5 +20,5 @@ server:
 
 logging:
   level:
-    root: debug
+    root: error
   file: passbook-merchants.log

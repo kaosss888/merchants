@@ -1,7 +1,7 @@
 package com.application.passbook.merchants.constant;
 
 /**
- * 优惠券颜色
+ * <h1>优惠券颜色</h1>
  */
 public enum TemplateColor {
 
