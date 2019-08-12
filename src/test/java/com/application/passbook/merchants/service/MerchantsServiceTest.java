@@ -4,12 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.application.passbook.merchants.vo.CreateMerchantsRequest;
 import com.application.passbook.merchants.vo.PassTemplate;
 import org.apache.commons.lang.time.DateUtils;
-import org.assertj.core.util.DateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
@@ -40,7 +38,7 @@ public class MerchantsServiceTest {
     @Test
     public void testBuildMerchantsInfoById() {
 
-        System.out.println(JSON.toJSONString(merchantsService.buildMerchantsInfoById(5)));
+        System.out.println(JSON.toJSONString(merchantsService.buildMerchantsInfoById(7)));
     }
 
     @Test
