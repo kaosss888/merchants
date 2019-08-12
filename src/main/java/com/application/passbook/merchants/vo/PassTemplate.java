@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * 投放的优惠券对象定义
+ * <h2>投放的优惠券对象定义</h2>
  */
 @Data
 @NoArgsConstructor
