@@ -1,0 +1,10 @@
+1、主键生成策略问题
+TABLE：使用一个特定的数据库表格来保存主键。
+SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列。
+IDENTITY：主键由数据库自动生成（主要是自动增长型）
+AUTO：主键由程序控制。
+在指定主键时，如果不指定主键生成策略，默认为AUTO
+****当主键指定AUTO时默认采用Oracle实现主键自增，数据库采用Mysql实现主键自增时，需要IDENTITY，不然会去查找保存其他表主键的hibernate_sequence序列表
+
+2、Spring 5开始 WebMvcConfigureAdaptor被弃用
+从Spring 5开始，WebMvcConfigure接口包含了WebMvcConfigurerAdapter类中所有方法的默认实现，将原来的继承WebMvcConfigurerAdapter类改为实现WebMvcConfigurer接口，其余的地方都没有变化。但有一点需要注意，如果你是升级旧有的应用程序，需要将方法中对super()的调用代码清除。
